@@ -13,3 +13,7 @@ https://help.tdx.com.cn/quant/
 ### 官方网址
 
 www.tdx.com.cn
+
+### Download
+
+https://www.tdx.com.cn/soft.html
