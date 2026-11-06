@@ -31,9 +31,9 @@ print(result)
 ---
 ## 何时使用
 
-- 用 `tqs` 类从 TdxAiData 动态库（随包分发：Windows `TdxAiData.dll` / macOS `libTdxAiData.dylib` / Linux `libTdxAiData.so`）取**行情、基础信息、专业数据、分笔、订阅实时行情**；
-- 生成、修改、审查基于 `tqs` 的 **Windows / macOS / Linux 跨平台 Python 数据脚本**；
-- **不适用**：`tqcenter` / `TPyth` / 交易 / 通达信客户端交互（见文末「禁止生成的接口」）；公式仅支持批量计算（见 §8.9、§8.10）。
+- 用 `tqs` 类从 TdxAiData 动态库（随包分发：Windows `TdxAiData.dll` ）取**行情、基础信息、专业数据、分笔、订阅实时行情**；
+- 生成、修改、审查基于 `tqs` 的 **Windows 跨平台 Python 数据脚本**；
+
 
 ---
 
@@ -41,9 +41,13 @@ print(result)
 
 `tdxaidata` 通过 PyPI 发行（包内已含各平台动态库与 `TdxAiData.ini`），安装到当前 Python 库目录（`site-packages`）后**直接 import 即可**，无需配置目录或插入 `sys.path`：
 
-1. **安装 / 更新**：未安装 → `python -m pip install tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；已安装 → 用 `python -m pip index versions tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple` 检查最新版本，落后 → `python -m pip install -U tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；验证：`python -c "import tdxaidata; print(tdxaidata.__version__)"`。
-2. **确认 Token**：动态库初始化时读取包内 `lib/TdxAiData.ini`（`site-packages\tdxaidata\lib\`）的 `[Token]` 节，默认 `token=` 为空会导致认证失败；须先在 `[Token]` 节填写 `token=`（及 `user=`）。
-3. **调用**：`from tdxaidata import tqs` 直接使用下文接口。
+1. **安装 / 更新**：
+2. 未安装 → `python -m pip install tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；
+3. 已安装 → 用 `python -m pip index versions tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple` 检查最新版本，
+4. 落后 → `python -m pip install -U tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；
+5. 验证：`python -c "import tdxaidata; print(tdxaidata.__version__)"`。
+6. **确认 Token**：动态库初始化时读取包内 `lib/TdxAiData.ini`（`site-packages\tdxaidata\lib\`）的 `[Token]` 节，默认 `token=` 为空会导致认证失败；须先在 `[Token]` 节填写 `token=`（及 `user=`）。
+7. **调用**：`from tdxaidata import tqs` 直接使用下文接口。
 
 ---
 
