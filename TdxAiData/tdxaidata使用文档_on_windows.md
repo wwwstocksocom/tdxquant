@@ -41,14 +41,21 @@ print(result)
 
 `tdxaidata` 通过 PyPI 发行（包内已含各平台动态库与 `TdxAiData.ini`），安装到当前 Python 库目录（`site-packages`）后**直接 import 即可**，无需配置目录或插入 `sys.path`：
 
-1. **安装 / 更新**：
-2. 未安装 → `python -m pip install tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；
-3. 已安装 → 用 `python -m pip index versions tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple` 检查最新版本，
-4. 落后 → `python -m pip install -U tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple`；
+~~~
+# 安装
+python -m pip install tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# check installed and latest version
+python -m pip index versions tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# upgrade
+python -m pip install -U tdxaidata -i https://pypi.tuna.tsinghua.edu.cn/simple
+
 5. 验证：`python -c "import tdxaidata; print(tdxaidata.__version__)"`。
+
 6. **确认 Token**：动态库初始化时读取包内 `lib/TdxAiData.ini`（`site-packages\tdxaidata\lib\`）的 `[Token]` 节，默认 `token=` 为空会导致认证失败；须先在 `[Token]` 节填写 `token=`（及 `user=`）。
 7. **调用**：`from tdxaidata import tqs` 直接使用下文接口。
-
+~~~
 ---
 
 ## 标准接入代码（每次脚本必带）
@@ -58,7 +65,7 @@ print(result)
 from tdxaidata import TqsError, tqs
 ```
 
-运行前确认（可选）：
+运行前确认：
 
 ```python
 import configparser
