@@ -2,7 +2,8 @@
 > 文档版本：2026-10-23（对应 tdxaidata 1.3.1）
 >
 > 本文档面向通过 PyPI 包 `tdxaidata`（`pip install tdxaidata`，包内含 Windows / macOS / Linux 各平台动态库）调用 `tqs` 的 Python 开发者。接口返回示例用于说明结构，实际字段和值会随代码、日期和服务端数据变化。
-> source:F:\InstallDir\Python\Lib\site-packages\tdxaidata\docs\tdxaidata使用文档.md
+
+> source:F:\InstallDir\Python\Lib\site-packages\tdxaidata\docs\tdxaidata使用文档.md  20261107
 
 ## 文档范围
 
