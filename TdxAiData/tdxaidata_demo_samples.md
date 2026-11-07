@@ -1,4 +1,17 @@
 
+## 通用函数
+
+### 获取版本信息get_version
+
+~~~
+print("当前的tdxaidata版本号是：" + tdxaidata.__version__)
+~~~
+
+output
+
+~~~
+当前的tdxaidata版本号是：1.3.1
+~~~
 
 
 
