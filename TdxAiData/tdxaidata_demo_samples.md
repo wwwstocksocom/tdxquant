@@ -1,7 +1,20 @@
 
 
 
-## F10股票综合信息
+
+
+## 分类/板块成份股
+
+### 证券代码列表 - get_stock_list
+
+~~~
+stock_list_data = tqs.get_stock_list(5, 1)  # 获取所有股票列表
+print(stock_list_data)
+~~~
+
+## TdxAiData特有函数
+
+### F10股票综合信息
 
 ~~~
 misc_data = tqs.get_misc_data(stock_code="300750.SZ")
@@ -28,13 +41,4 @@ output
   "北向成交": "11月6日成交36.78亿,深股通排名第2"
 }
 
-~~~
-
-## 分类/板块成份股
-
-### 证券代码列表 - get_stock_list
-
-~~~
-stock_list_data = tqs.get_stock_list(5, 1)  # 获取所有股票列表
-print(stock_list_data)
 ~~~
